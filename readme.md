@@ -56,6 +56,6 @@ Montage written to ./spotify-montage-QRht.png
 ```
 If you run it without the --playlist option, it'll use this hardcoded playlist with 8 songs: https://open.spotify.com/user/deepak.gulati/playlist/7EhvGQRwc71oEpRjvEV6uR
 
-### Dependencies
+### Supported Platforms
 
 I've only tested this script on macOS 10.12.3. If you have a working installation of Perl 5.14 or higher and are able to install the dependencies, it *should* work on older versions of macOS as well. It might work on Linux with little or no tweaking but about Windows I am considerably less sure.
