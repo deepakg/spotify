@@ -1,9 +1,13 @@
 # Spotify Album Art Collage
 
 ![Album art collage](spotify-montage-QRht.png)
-spotify-collage.pl takes a url to a Spotify playlist and generates a collage of album art images of the tracks in that playlist.
+spotify-collage.pl takes a url to a Spotify playlist and stitches a collage of album art images of the tracks in that playlist.
 
-Usage:
+- The album art images are resized to 200x200 pixels
+- The images are laid out in a 4:3 grid
+- The generated collage is saved in .png format in the folder that you run this script in.
+
+### Usage
 
 ```
 perl spotify-collage.pl --playlist https://open.spotify.com/user/beatlesplaylists/playlist/1FbXE0DKfcNlIRexSEHcs8
@@ -36,7 +40,7 @@ Montage written to ./spotify-montage-QRht.png
 ```
 If you run it without the --playlist option, it'll use this hardcoded playlist with 8 songs: https://open.spotify.com/user/deepak.gulati/playlist/7EhvGQRwc71oEpRjvEV6uR
 
-Dependencies:
+### Dependencies
 
 This script has following external dependencies that you'd need to install from CPAN:
 
