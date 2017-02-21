@@ -1,3 +1,5 @@
+# Spotify Album Art Collage
+
 ![Album art collage](spotify-montage-QRht.png)
 spotify-collage.pl takes a url to a Spotify playlist and generates a collage of album art images of the tracks in that playlist.
 
