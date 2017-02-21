@@ -9,6 +9,22 @@ spotify-collage.pl takes a url to a Spotify playlist and stitches a collage of a
 
 ### Usage
 
+Before you can use the script, you’ll need to set up an [application on Spotify](https://developer.spotify.com/my-applications/#!/applications). This will give you a client\_id and client\_secret. You'll need to save these to a file called .api_keys in your home directory:
+
+```
+[spotify]
+client_id = <your client_id>
+client_secret = <your client_secret>
+```
+
+This script also has following dependencies that you'd need to install from CPAN:
+
+- Config::INI::Reader
+- Imager::Montage
+- JSON::XS
+
+You should then be able to run the script as:
+
 ```
 perl spotify-collage.pl --playlist https://open.spotify.com/user/beatlesplaylists/playlist/1FbXE0DKfcNlIRexSEHcs8
 ```
@@ -41,11 +57,5 @@ Montage written to ./spotify-montage-QRht.png
 If you run it without the --playlist option, it'll use this hardcoded playlist with 8 songs: https://open.spotify.com/user/deepak.gulati/playlist/7EhvGQRwc71oEpRjvEV6uR
 
 ### Dependencies
-
-This script has following external dependencies that you'd need to install from CPAN:
-
-- Config::INI::Reader
-- Imager::Montage
-- JSON::XS
 
 I've only tested this script on macOS 10.12.3. If you have a working installation of Perl 5.14 or higher and are able to install the dependencies, it *should* work on older versions of macOS as well. It might work on Linux with little or no tweaking but about Windows I am considerably less sure.
