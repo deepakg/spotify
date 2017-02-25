@@ -111,6 +111,7 @@ sub create_montage {
     my $total_images = scalar @images;
     my ($rows, $cols) = get_rows_cols($total_images);
     say STDERR "Filling $total_images images into a collage of $rows rows and $cols columns";
+    # @images = transpose(\@images, $cols, $rows);
 
     my $im = Imager::Montage->new;
     my $page = $im->gen_page(
@@ -195,4 +196,19 @@ sub get_rows_cols {
     }
 
     return($rows, $cols);
+}
+
+sub transpose {
+    my ($array, $rows, $cols) = @_;
+    my @new_array = ();
+    for (my $i = 0; $i < $rows; $i++) {
+        for (my $j = 0; $j < $cols; $j++) {
+            my $index = ($i*$cols)+$j;
+            my $new_index = ($j*$rows)+$i;
+            $new_array[$index] = $array->[$new_index];
+            #($array->[$index], $array->[$new_index]) = ($array->[$new_index], $array->[$index]);
+            #say "$i, $j, $index, $new_index, $array->[$index], $array->[$new_index]";
+        }
+    }
+    return @new_array;
 }
