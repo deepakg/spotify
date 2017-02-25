@@ -1,6 +1,7 @@
 # Spotify Album Art Collage
 
 ![Album art collage](spotify-montage-ehzA.png)
+
 spotify-collage.pl takes a url to a Spotify playlist and stitches a collage of album art images of the tracks in that playlist.
 
 - The album art images are resized to 200x200 pixels
