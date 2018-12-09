@@ -40,7 +40,13 @@ sub get_images {
         my $resp = $ua->get($api_url, $options);
         if ($resp->{success}) {
             my $tracks = decode_json($resp->{content});
-            push @items, @{$tracks->{items}};
+            if (exists $tracks->{items}) {
+                push @items, @{$tracks->{items}};
+            } elsif (exists $tracks->{tracks}->{items}) {
+                push @items, @{$tracks->{tracks}->{items}};
+            } else {
+                die Dumper($resp);
+            }
             $api_url = $tracks->{next};
         }
         else {
